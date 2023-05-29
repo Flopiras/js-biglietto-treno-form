@@ -1,25 +1,30 @@
 console.log('js ok')
 
 // Individuare gli elementi nel DOM
-const userDistance = Number(document.getElementById(distance));
-const userAge = document.getElementById(age);
-console.log(userDistance , userAge)
+const userDistance = document.getElementById("distance").value;
+const inputAge = document.getElementById("age");
+const button = document.getElementById("button")
+console.log(userDistance , inputAge)
 console.log(typeof userDistance)
 
-
-// *********VALIDAZIONE***********
-if (!userDistance || userDistance <= 0){
-    alert('ATTENTIONE \n I dati inseriti non sono validi');
-} else {
-    let price = 0.21;
-    price *= userDistance;
-    if (userAge === "Meno di 18 anni") {
-        const discount = 0.8
-        price *= discount
+//click utente
+button.addEventListener('click', function(){
+    // *********VALIDAZIONE***********
+    
+    if (!userDistance || parseInt(userDistance) <= 0){
+        alert('ATTENTIONE \n I dati inseriti non sono validi');
     } 
-    else (userAge === "65 anni o più") 
-        const discount = 0.8
-        price *= discount
-        console.log(price)
+    else {
+        const discount = 1;
+        let lastPrice = 0.21 * userDistance ;
+        lastPrice *= discount;
+        if (inputAge.value === "20-discount") {
+            const discount = 0.8
+        } 
+        else if (inputAge.value === "40-discount") {
+            const discount = 0.6
+        }
+        console.log(lastPrice);
     }
-
+    }
+)
