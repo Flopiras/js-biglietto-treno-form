@@ -1,9 +1,11 @@
 console.log('js ok')
 
 // Individuare gli elementi nel DOM
-const userDistance = document.getElementById(distance);
+const userDistance = Number(document.getElementById(distance));
 const userAge = document.getElementById(age);
 console.log(userDistance , userAge)
+console.log(typeof userDistance)
+
 
 // *********VALIDAZIONE***********
 if (!userDistance || userDistance <= 0){
